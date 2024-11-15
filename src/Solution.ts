@@ -4,6 +4,10 @@ import Contestant from "./Contestant";
 export default class Solution {
   #contestants: Contestant[] = [];
 
+  get contestantsCount(): number{
+    return this.#contestants.length;
+  }
+
   constructor(source: string) {
     let fileRawString: string[] = fs
       .readFileSync(source)
