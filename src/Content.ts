@@ -25,14 +25,21 @@ export default function content(
   res.write(
     "<meta name='viewport' content='width=device-width, initial-scale=1.0'>"
   );
-  res.write("<title>Jedlik Ts Template</title>");
+  res.write("<title>Kalapácsvetés</title>");
   res.write("</head>");
   res.write("<body><form><pre>");
 
-  // ##############
-  const solution: Solution = new Solution("Selejtezo2012.txt");
 
+  res.write('<h1 style="text-align: center">Kalapácsvetés</h1>');
+  res.write('<h5 style="text-align: center">2021.május.12.</h5>');
+  res.write('<div style="text-align: center; margin-top: 100px">')
+  // ##############
+
+  const solution: Solution = new Solution("Selejtezo2012.txt");
+  res.write(`5.feladat: Atléták száma: ${solution.contestantsCount}`)
+  
   // *************
+  res.write('</div>')
 
   res.write("</pre></form></body></html>");
   res.end();
