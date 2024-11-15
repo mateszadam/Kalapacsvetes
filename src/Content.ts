@@ -35,10 +35,12 @@ export default function content(
   // ##############
 
   const solution: Solution = new Solution("Selejtezo2012.txt");
-  res.write(`5.feladat: Atléták száma: ${solution.contestantsCount}`);
+
+  res.write(`5.feladat: Versenyzők száma a selejtezőben: ${solution.contestantsCount} fő\n`)
   res.write(
     `6.feladat: 78,00 méter feletti teljesítménnyel továbjutott: ${solution.qualifiedCount} fő\n`
   );
+
   // *************
   res.write("</div>");
 
