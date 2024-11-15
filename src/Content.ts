@@ -29,17 +29,20 @@ export default function content(
   res.write("</head>");
   res.write("<body><form><pre>");
 
-
   res.write('<h1 style="text-align: center">Kalapácsvetés</h1>');
   res.write('<h5 style="text-align: center">2021.május.12.</h5>');
-  res.write('<div style="text-align: center; margin-top: 100px">')
+  res.write('<div style="text-align: center; margin-top: 100px">');
   // ##############
 
   const solution: Solution = new Solution("Selejtezo2012.txt");
+
   res.write(`5.feladat: Versenyzők száma a selejtezőben: ${solution.contestantsCount} fő\n`)
-  
+  res.write(
+    `6.feladat: 78,00 méter feletti teljesítménnyel továbjutott: ${solution.qualifiedCount} fő\n`
+  );
+
   // *************
-  res.write('</div>')
+  res.write("</div>");
 
   res.write("</pre></form></body></html>");
   res.end();

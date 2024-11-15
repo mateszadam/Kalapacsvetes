@@ -4,8 +4,12 @@ import Contestant from "./Contestant";
 export default class Solution {
   #contestants: Contestant[] = [];
 
-  get contestantsCount(): number{
+  get contestantsCount(): number {
     return this.#contestants.length;
+  }
+
+  get qualifiedCount(): number {
+    return this.#contestants.filter((c) => c.isQualified).length;
   }
 
   constructor(source: string) {
