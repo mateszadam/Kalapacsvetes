@@ -21,7 +21,6 @@ export default class Solution {
     return this.#contestants.filter((c) => c.result == biggest)[0];
   }
 
-
   #writeFile(_fileName: string): void {        
     try {      
       let top12: Contestant[] = this.#contestants.sort((a, b) => (b.result - a.result));         
@@ -34,7 +33,6 @@ export default class Solution {
         console.log((error as Error).message);
     }    
   }
-
 
   constructor(source: string) {
     let fileRawString: string[] = fs
