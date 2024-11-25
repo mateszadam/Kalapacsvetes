@@ -33,6 +33,10 @@ export default class Contestant {
     return this.#_throws;
   }
 
+  get throwsString(): string{
+    return this.#_throws.join(";").replaceAll(".", ",").replaceAll("-2", "-").replaceAll("-1", "X");
+  }
+
   get result(): number {
     return Math.max(...this.throws);
   }
@@ -41,7 +45,7 @@ export default class Contestant {
             \tCsoport: ${this.#_group}
             \tNemzet: ${this.nation}
             \tNemzet kód: ${this.natCode}
-            \tSorozat: ${this.#_throws.join(";").replaceAll(".", ",").replaceAll("-2", "-").replaceAll("-1", "X")}
+            \tSorozat: ${this.throwsString}
             \tEredmény: ${this.result.toString().replaceAll(".", ",")}\n`;
   }
 

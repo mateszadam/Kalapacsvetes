@@ -41,7 +41,7 @@ export default function content(
     `5.feladat: Versenyzők száma a selejtezőben: ${solution.contestantsCount} fő\n`
   );
   res.write(
-    `6.feladat: 78,00 méter feletti teljesítménnyel továbjutott: ${solution.qualifiedCount} fő\n`
+    `6.feladat: 78,00 méter feletti teljesítménnyel továbjutott: ${solution.qualifiedOver78Count} fő\n`
   );
 
   res.write(
