@@ -33,7 +33,7 @@ export default class Contestant {
     return this.#_throws;
   }
 
-  get result(): number{    
+  get result(): number {
     return Math.max(...this.throws);
   }
 
@@ -47,7 +47,7 @@ export default class Contestant {
     this.#_throws = [];
     for (let i = 3; i <= 5; i++) {
       if (data[i] == "X") this.#_throws.push(-1.0);
-      if (data[i] == "-") this.#_throws.push(-2.0);
+      else if (data[i] == "-") this.#_throws.push(-2.0);
       else this.#_throws.push(+data[i].replace(",", "."));
     }
   }

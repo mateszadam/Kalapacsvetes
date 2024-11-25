@@ -12,6 +12,18 @@ export default class Solution {
     return this.#contestants.filter((c) => c.isQualified).length;
   }
 
+  get biggestThrow(): Contestant {
+    this.#contestants.forEach((c) => console.log(c.throws));
+
+    console.log(this.#contestants.map((c) => c.result));
+
+    let biggest: number = Math.max(...this.#contestants.map((c) => c.result));
+    console.log(biggest);
+    console.log(this.#contestants.filter((c) => c.result == biggest));
+
+    return this.#contestants.filter((c) => c.result == biggest)[0];
+  }
+
   constructor(source: string) {
     let fileRawString: string[] = fs
       .readFileSync(source)
