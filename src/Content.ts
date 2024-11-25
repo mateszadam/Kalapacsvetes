@@ -44,6 +44,9 @@ export default function content(
     `6.feladat: 78,00 méter feletti teljesítménnyel továbjutott: ${solution.qualifiedCount} fő\n`
   );
 
+  res.write(
+    `9.feladat: A selejtező nyelrese:\n\t${solution.biggestThrow.formattedOutput}`
+  );
   // *************
   res.write("</div>");
 
