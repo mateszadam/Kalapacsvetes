@@ -17,16 +17,16 @@ export default class Contestant {
   }
 
   private get nationAndCode(): string[] {
-    return this.#_nationAndCode.split(" ");
+    return this.#_nationAndCode.split("(");
   }
 
   get nation(): string {
-    return this.nationAndCode[0];
+    return this.nationAndCode[0].trim();
   }
 
   get natCode(): string {
-    let codeRaw: string = this.nationAndCode[this.nationAndCode.length-1];
-    return codeRaw.substring(1, codeRaw.length - 1);
+    let codeRaw: string = this.nationAndCode[1];
+    return codeRaw.substring(0, codeRaw.length - 1);
   }
 
   get throws(): number[] {
