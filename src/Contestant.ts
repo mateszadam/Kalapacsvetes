@@ -36,6 +36,14 @@ export default class Contestant {
   get result(): number {
     return Math.max(...this.throws);
   }
+  get formattedOutput(): string {
+    return `Név: ${this.#_name}
+            \n\tCsoport: ${this.#_group}
+            \n\tNemzet: ${this.nation}
+            \n\tNemzet kód: ${this.natCode}
+            \n\tSorozat: ${this.#_throws.join(";").replaceAll(".", ",").replaceAll("-2", "-").replaceAll("-1", "X")}
+            \n\tEredmény: ${this.result.toString().replaceAll(".", ",")}\n`;
+  }
 
   constructor(row: string) {
     let data: string[] = row.split(";");
