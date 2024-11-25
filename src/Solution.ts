@@ -8,11 +8,11 @@ export default class Solution {
     return this.#contestants.length;
   }
 
-  get qualifiedCount(): number {
-    return this.qualifiers.length;
+  get qualifiedOver78Count(): number {
+    return this.qualifiersOver78.length;
   }
 
-  private get qualifiers(): Contestant[]{
+  private get qualifiersOver78(): Contestant[]{
     return this.#contestants.filter((c) => c.isQualified);
   }
 
