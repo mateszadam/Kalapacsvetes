@@ -26,7 +26,7 @@ export default class Solution {
       let top12: Contestant[] = this.#contestants.sort((a, b) => (b.result - a.result));         
       let out: string = "Helyezés;Név;Csoport;Nemzet;NemzetKód;Sorozat;Eredmény";
       top12.slice(0, 12).forEach((c, i) =>{
-        out+=`\r${i+1};${c.name};${c.group};${c.nation};${c.natCode};${c.throwsString};${c.result}`;
+        out+=`\r${i+1};${c.name};${c.group};${c.nation};${c.natCode};${c.throwsString};${c.result.toString().replace(".", ",")}`;
       })
       fs.writeFileSync(_fileName, out);
     } catch (error) {
