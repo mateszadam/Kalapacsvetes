@@ -32,7 +32,7 @@ export default function content(
 
   res.write('<h1 style="text-align: center">Kalapácsvetés</h1>');
   res.write('<h5 style="text-align: center">2021.május.12.</h5>');
-  res.write('<div style="text-align: center; margin-top: 100px">');
+  res.write('<div style="margin: 50px auto 0px auto; width: fit-content; font-size: 16px">');  
   // ##############
 
   const solution: Solution = new Solution("Selejtezo2012.txt");
