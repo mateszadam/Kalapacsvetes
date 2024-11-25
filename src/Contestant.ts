@@ -41,12 +41,12 @@ export default class Contestant {
     return Math.max(...this.throws);
   }
   get formattedOutput(): string {
-    return `\tNév: ${this.#_name}
-            \tCsoport: ${this.#_group}
-            \tNemzet: ${this.nation}
-            \tNemzet kód: ${this.natCode}
-            \tSorozat: ${this.throwsString}
-            \tEredmény: ${this.result.toString().replaceAll(".", ",")}\n`;
+    return `Név: ${this.#_name}
+    \tCsoport: ${this.#_group}
+    \tNemzet: ${this.nation}
+    \tNemzet kód: ${this.natCode}
+    \tSorozat: ${this.throwsString}
+    \tEredmény: ${this.result.toString().replaceAll(".", ",")}\n`;
   }
 
   constructor(row: string) {
