@@ -25,7 +25,7 @@ export default class Contestant {
   }
 
   get natCode(): string {
-    let codeRaw: string = this.nationAndCode[1];
+    let codeRaw: string = this.nationAndCode[this.nationAndCode.length-1];
     return codeRaw.substring(1, codeRaw.length - 1);
   }
 
