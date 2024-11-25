@@ -33,6 +33,10 @@ export default class Contestant {
     return this.#_throws;
   }
 
+  get result(): number{    
+    return Math.max(...this.throws);
+  }
+
   constructor(row: string) {
     let data: string[] = row.split(";");
     this.#_name = data[0];
