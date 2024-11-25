@@ -2,6 +2,7 @@
 import http from "http"; // https://nodejs.org/docs/latest-v14.x/api/http.html
 import url from "url"; // https://nodejs.org/docs/latest-v14.x/api/url.html
 import Solution from "./Solution";
+import Contestant from "./Contestant";
 
 export default function content(
   req: http.IncomingMessage,
@@ -36,11 +37,16 @@ export default function content(
 
   const solution: Solution = new Solution("Selejtezo2012.txt");
 
-  res.write(`5.feladat: Versenyzők száma a selejtezőben: ${solution.contestantsCount} fő\n`)
+  res.write(
+    `5.feladat: Versenyzők száma a selejtezőben: ${solution.contestantsCount} fő\n`
+  );
   res.write(
     `6.feladat: 78,00 méter feletti teljesítménnyel továbjutott: ${solution.qualifiedCount} fő\n`
   );
 
+  res.write(
+    `9.feladat: A selejtező nyelrese:\n\t${solution.biggestThrow.formattedOutput}`
+  );
   // *************
   res.write("</div>");
 
