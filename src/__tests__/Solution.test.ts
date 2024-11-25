@@ -1,4 +1,5 @@
-import Solution from "../Solution"
+import Solution from "../Solution";
+import fs from "fs";
 
 describe("Tests for Solution.ts", ()=>{
     it("Getters return expected value", ()=>{
@@ -10,4 +11,13 @@ describe("Tests for Solution.ts", ()=>{
     it("Wrong source name should return error", ()=>{
         expect(()=>{new Solution("wrongFile.csv")}).toThrow();
     });
+    it("Check output file content", ()=>{
+        let createdFileString = fs
+            .readFileSync("Dontos2012.txt")
+            .toString();
+        let solutionFileString = fs
+            .readFileSync("Dontos2012_Solution.txt")
+            .toString();
+        expect(createdFileString).toEqual(solutionFileString);
+    })
 })
